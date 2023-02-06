@@ -6,4 +6,5 @@ import com.patrickseremba.sm.api.Student;
 
 public interface StudentDAO {
 	List<Student> loadStudents();
+	void saveStudent(Student student);
 }

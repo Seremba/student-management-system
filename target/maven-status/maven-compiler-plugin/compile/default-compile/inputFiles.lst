@@ -1,0 +1,7 @@
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/api/Student.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/rowmapper/StudentRowMapper.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/DAO/StudentDAOImplementation.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/DAO/StudentDAO.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/config/StudentAppInitializer.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/controllers/StudentController.java
+/home/seremba/eclipse-workspace/students-management/src/main/java/com/patrickseremba/sm/config/StudentAppConfig.java

@@ -3,8 +3,16 @@ package com.patrickseremba.sm.api;
 public class Student {
 	private int id;
 	private String name;
-	private long mobile;
+	private Long mobile;
 	private String country;
+
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
+	}
+
+	public Long getMobile() {
+		return mobile;
+	}
 
 	public int getId() {
 		return id;
@@ -22,14 +30,6 @@ public class Student {
 		this.name = name;
 	}
 
-	public long getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
-	}
-
 	public String getCountry() {
 		return country;
 	}
@@ -42,6 +42,5 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", mobile=" + mobile + ", country=" + country + "]";
 	}
-	
-	
+
 }
