@@ -6,20 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.patrickseremba.sm.DAO.StudentDAO;
 import com.patrickseremba.sm.api.Student;
+import com.patrickseremba.sm.api.StudentDTO;
 
 @Controller
 public class StudentController {
 	@Autowired
 	StudentDAO studentDAO;
+
 	@GetMapping("/showStudent")
 	public String showStudentString(Model model) {
-		
+
 		List<Student> students = studentDAO.loadStudents();
-		
+
 		model.addAttribute("students", students);
-		 return "student-list";
+		return "student-list";
+	}
+
+	@GetMapping("/showAddStudentPage")
+	public String addStudent(Model model) {
+
+		StudentDTO studentDTO = new StudentDTO();
+		model.addAttribute("student", studentDTO);
+		return "add-student";
+	}
+	
+	
+	@PostMapping("/save-student")
+	public String saveStudent(StudentDTO studentDTO) {
+		
+		// write logic to save data to the database
+		return "saving student ssebo..";
 	}
 }
