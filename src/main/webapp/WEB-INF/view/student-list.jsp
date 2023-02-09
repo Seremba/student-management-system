@@ -8,10 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 align="center">I love Java Mbwa Gwe</h1>
+	<h1 align="center">Student Management System</h1>
 
 <div align="center">
-
+	<form action="/students-management/showAddStudentPage">
+		<input type="submit" value="ADD">
+	</form>
 	<table border="1">
 		<thead>
 			<tr>
@@ -28,6 +30,7 @@
 				<td>${student.name}</td>
 				<td>${student.mobile}</td>
 				<td>${student.country}</td>
+				<td> <a href="/students-management/updateStudent?userId=${student.id}">Update</a><td> 
 				</tr>
 			</c:forEach>
 	

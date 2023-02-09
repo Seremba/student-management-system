@@ -23,10 +23,6 @@ public class StudentDAOImplementation implements StudentDAO {
 		
 		List<Student> studentList = jdbcTemplate.query(sql, new StudentRowMapper());
 		
-		for(Student temp: studentList) {
-			System.out.println(temp);
-		}
-		
 		return studentList;
 	}
 
@@ -38,6 +34,35 @@ public class StudentDAOImplementation implements StudentDAO {
 		
 		jdbcTemplate.update(sql, sqlParams);
 		
+		System.out.println("updated one record");
+	}
+
+	@Override
+	public Student getStudent(int id) {
+		String sql = "SELECT * FROM students WHERE ID = ?";
+		
+		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
+		
+		return student;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 package com.patrickseremba.sm.api;
 
 public class Student {
-	private int id;
+	private int id = 0;
 	private String name;
 	private Long mobile;
 	private String country;

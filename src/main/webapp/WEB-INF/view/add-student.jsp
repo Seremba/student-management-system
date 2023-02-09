@@ -13,7 +13,7 @@
 
 
 <h3>Add Student</h3>
-	<form:form  action="/save-student" modelAttribute="student">
+	<form:form  action="/students-management/save-student" modelAttribute="student" method="POST">
 
 		<label>Name: </label>
 		<form:input path="name" /> <br>
