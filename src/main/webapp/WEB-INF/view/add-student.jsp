@@ -9,25 +9,30 @@
 </head>
 <body>
 
-<div align="center">
+	<div align="center">
 
 
-<h3>Add Student</h3>
-	<form:form  action="/students-management/save-student" modelAttribute="student" method="POST">
+		<h3>Add Student</h3>
+		<form:form action="/students-management/save-student"
+			modelAttribute="student" method="POST">
 
-		<label>Name: </label>
-		<form:input path="name" /> <br>
+			<form:hidden path="id" />
+			<label>Name: </label>
+			<form:input path="name" />
+			<br>
 
-		<label>Mobile: </label>
-		<form:input path="mobile" /> <br>
+			<label>Mobile: </label>
+			<form:input path="mobile" />
+			<br>
 
-		<label>Country: </label>
-		<form:input path="country" /> <br>
-		
-		<input type="submit" value="Submit">
-	</form:form>
+			<label>Country: </label>
+			<form:input path="country" />
+			<br>
 
-</div>
+			<input type="submit" value="Submit">
+		</form:form>
+
+	</div>
 
 </body>
 </html>

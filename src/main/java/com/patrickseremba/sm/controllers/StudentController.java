@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.patrickseremba.sm.DAO.StudentDAO;
 import com.patrickseremba.sm.api.Student;
 import com.patrickseremba.sm.service.StudentService;
 
@@ -42,10 +39,14 @@ public class StudentController {
 
 	@PostMapping("/save-student")
 	public String saveStudent(Student student) {
-
-		System.out.println(student);
-
-		studentService.saveStudent(student);
+		// if no id,
+		if (student.getId() == 0) {
+			// insert a new record to the db
+			studentService.saveStudent(student);
+		} else {
+			// do an update
+			studentService.update(student);
+		}
 
 		return "redirect:/showStudent";
 	}

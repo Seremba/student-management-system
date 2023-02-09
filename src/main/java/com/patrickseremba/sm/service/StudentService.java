@@ -9,4 +9,6 @@ public interface StudentService {
 
 	void saveStudent(Student student);
 	Student getStudent(int id);
+
+	void update(Student student);
 }

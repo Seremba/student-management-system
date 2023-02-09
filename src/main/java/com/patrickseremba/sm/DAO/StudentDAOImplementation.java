@@ -12,7 +12,7 @@ import com.patrickseremba.sm.rowmapper.StudentRowMapper;
 
 @Repository
 public class StudentDAOImplementation implements StudentDAO {
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
@@ -20,49 +20,40 @@ public class StudentDAOImplementation implements StudentDAO {
 	public List<Student> loadStudents() {
 
 		String sql = "SELECT * FROM students";
-		
+
 		List<Student> studentList = jdbcTemplate.query(sql, new StudentRowMapper());
-		
+
 		return studentList;
 	}
 
 	@Override
 	public void saveStudent(Student student) {
-		Object[] sqlParams = {student.getName(), student.getMobile(), student.getCountry()};
-		
+		Object[] sqlParams = { student.getName(), student.getMobile(), student.getCountry() };
+
 		String sql = "insert into students(name,mobile,country) values(?,?,?)";
-		
+
 		jdbcTemplate.update(sql, sqlParams);
-		
-		System.out.println("updated one record");
+
+		System.out.println("inserted one record");
 	}
 
 	@Override
 	public Student getStudent(int id) {
 		String sql = "SELECT * FROM students WHERE ID = ?";
-		
+
 		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
-		
+
 		return student;
 	}
 
+	@Override
+	public void update(Student student) {
+
+		String sql = "UPDATE students SET name = ?, mobile = ?, country = ? WHERE id = ?";
+
+		jdbcTemplate.update(sql, student.getName(), student.getMobile(), student.getCountry(), student.getId());
+
+		System.out.println("One record updated");
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
